@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# ignore main executable file made by VS Code
+main
