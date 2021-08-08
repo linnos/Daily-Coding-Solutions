@@ -33,3 +33,6 @@
 
 # ignore main executable file made by VS Code
 main
+
+# ignore vs code files for debugging
+.vscode
