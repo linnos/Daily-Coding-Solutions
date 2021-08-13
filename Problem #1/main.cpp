@@ -5,7 +5,7 @@
 #include <chrono>
 #include <ctime>  
 #include <cmath>  
-#include "common.h"
+#include "../common.h"
 
 bool addUpToKBruteForce(int number, std::vector<int> list){
     
