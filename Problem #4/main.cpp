@@ -39,7 +39,7 @@ int findMissingPositiveHashSet(std::vector<int> input){
     }
 }
 
-//Still not optimal
+//TODO: still not optimal. Need to come back to this one
 int findMissingPositiveOptimal(std::vector<int> input){
     int currNum = 1;
     std::unordered_set<int> result;
