@@ -39,26 +39,39 @@ int findMissingPositiveHashSet(std::vector<int> input){
     }
 }
 
-//TODO: still not optimal. Need to come back to this one
 int findMissingPositiveOptimal(std::vector<int> input){
-    int currNum = 1;
-    std::unordered_set<int> result;
+    
+    int n = input.size();
 
-    for(auto var: input){
-        if(var > 0){
-            result.insert(var);
-            if(result.find(currNum) != result.end()){
-                currNum++;
+        for(int i = 0; i < n; i++){
+                int temp = input[i];
+                input[i] = 0;
+
+                while (true)
+                {
+                    if(temp < 1 || temp > n || temp == input[temp-1]){
+                        break;
+                    }
+                    int temp2 = input[temp-1];
+                    input[temp-1] = temp;
+
+                    temp = temp2;
+                }
+
+            }
+
+        for(int i = 0; i < n; i++){
+            if(input[i] == 0){
+                return i+1;
             }
         }
-    }
 
-    return currNum;
+        return n + 1;
 }
 
 int main()
 {
-    std::vector<int> input = listMedium;
+    std::vector<int> input = {1,7,8,9,11,12};
 
     std::cout << findMissingPositiveBruteForce(input) << '\n';
     std::cout << findMissingPositiveHashSet(input) << '\n';
