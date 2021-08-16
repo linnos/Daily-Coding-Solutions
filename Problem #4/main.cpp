@@ -71,7 +71,7 @@ int findMissingPositiveOptimal(std::vector<int> input){
 
 int main()
 {
-    std::vector<int> input = {1,7,8,9,11,12};
+    std::vector<int> input = listMedium;
 
     std::cout << findMissingPositiveBruteForce(input) << '\n';
     std::cout << findMissingPositiveHashSet(input) << '\n';
